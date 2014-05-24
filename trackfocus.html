@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Track Focus</title>
+
+		<style>
+			a,
+			button,
+			input {}
+
+			.focus--keyboard {}
+
+			.focus--mouse {
+				outline: none;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<p><a href="#">A Link</a></p>
+		<p><button>A Button</button></p>
+		<p><input type="submit" value="A Submit Button"></p>
+		<p><input type="text"></p>
+		<p><textarea></textarea></p>
+
+		<script>
+			var addEventListener = function(el, eventName, handler) {
+				if (el.addEventListener) {
+					el.addEventListener(eventName, handler, false);
+				} else {
+					el.attachEvent('on' + eventName, function() {
+						handler.call(el);
+					});
+				}
+			};
+
+			var hasClass = function(elem, className) {
+				return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+			};
+
+			var addClass = function(elem, className) {
+				if (!hasClass(elem, className)) {
+					elem.className += ' ' + className;
+				}
+			};
+
+			var removeClass = function(elem, className) {
+				var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+
+				if (hasClass(elem, className)) {
+					while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+						newClass = newClass.replace(' ' + className + ' ', ' ');
+					}
+					elem.className = newClass.replace(/^\s+|\s+$/g, '');
+				}
+			};
+
+			var addFocus = function() {
+				if (lastDeviceUsed !== 'mouse' || new Date().getTime() - 50 > lastDeviceUsedWhen) {
+					addClass(this, 'focus--keyboard');
+				} else {
+					addClass(this, 'focus--mouse');
+				}
+			};
+
+			var removeFocus = function() {
+				removeClass(this, 'focus--keyboard');
+				removeClass(this, 'focus--mouse');
+			};
+
+			var pushToArray = function(container, collection) {
+				for (var i = 0; i < collection.length; i++) {
+					container.push(collection[i]);
+				}
+			};
+
+			var lastDeviceUsed = null;
+			var lastDeviceUsedWhen = null;
+
+			// get focus-able dom elements and create a single collection
+			var body = document.getElementsByTagName('body')[0];
+
+			var allInputs = document.getElementsByTagName('input');
+			var allButtons = document.getElementsByTagName('button');
+			var allTextareas = document.getElementsByTagName('textarea');
+
+			var allElements = [];
+			pushToArray(allElements, allInputs);
+			pushToArray(allElements, allButtons);
+			pushToArray(allElements, allTextareas);
+
+			// bind mousedown and keydown on body
+			addEventListener(body, 'mousedown', function() {
+				lastDeviceUsed = 'mouse';
+				lastDeviceUsedWhen = new Date().getTime();
+			});
+
+			addEventListener(body, 'keydown', function() {
+				lastDeviceUsed = 'keyboard';
+				lastDeviceUsedWhen = new Date().getTime();
+			});
+
+			// bind focus and blur on everything
+			// unfortunately focusin and focusout aren't fully supported yet
+			for (var i = 0; i < allElements.length; i++) {
+				addEventListener(allElements[i], 'focus', addFocus);
+				addEventListener(allElements[i], 'blur', removeFocus);
+			}
+		</script>
+
+	</body>
+</html>
