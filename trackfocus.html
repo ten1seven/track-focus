@@ -10,12 +10,26 @@
 		<style>
 			a,
 			button,
-			input {}
+			input,
+			textarea {
+				outline: none
+			}
 
-			.focus--keyboard {}
+			a:hover,
+			a:active {
+				outline: none;
+			}
+
+			a:focus,
+			button:focus,
+			input:focus,
+			textarea:focus {
+				outline: 3px solid blue;
+			}
 
 			.focus--mouse {
-				outline: none;
+				box-shadow: none !important;
+				outline: none !important;
 			}
 		</style>
 
@@ -28,90 +42,8 @@
 		<p><input type="text"></p>
 		<p><textarea></textarea></p>
 
-		<script>
-			var addEventListener = function(el, eventName, handler) {
-				if (el.addEventListener) {
-					el.addEventListener(eventName, handler, false);
-				} else {
-					el.attachEvent('on' + eventName, function() {
-						handler.call(el);
-					});
-				}
-			};
-
-			var hasClass = function(elem, className) {
-				return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-			};
-
-			var addClass = function(elem, className) {
-				if (!hasClass(elem, className)) {
-					elem.className += ' ' + className;
-				}
-			};
-
-			var removeClass = function(elem, className) {
-				var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-
-				if (hasClass(elem, className)) {
-					while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-						newClass = newClass.replace(' ' + className + ' ', ' ');
-					}
-					elem.className = newClass.replace(/^\s+|\s+$/g, '');
-				}
-			};
-
-			var addFocus = function() {
-				if (lastDeviceUsed !== 'mouse' || new Date().getTime() - 50 > lastDeviceUsedWhen) {
-					addClass(this, 'focus--keyboard');
-				} else {
-					addClass(this, 'focus--mouse');
-				}
-			};
-
-			var removeFocus = function() {
-				removeClass(this, 'focus--keyboard');
-				removeClass(this, 'focus--mouse');
-			};
-
-			var pushToArray = function(container, collection) {
-				for (var i = 0; i < collection.length; i++) {
-					container.push(collection[i]);
-				}
-			};
-
-			var lastDeviceUsed = null;
-			var lastDeviceUsedWhen = null;
-
-			// get focus-able dom elements and create a single collection
-			var body = document.getElementsByTagName('body')[0];
-
-			var allInputs = document.getElementsByTagName('input');
-			var allButtons = document.getElementsByTagName('button');
-			var allTextareas = document.getElementsByTagName('textarea');
-
-			var allElements = [];
-			pushToArray(allElements, allInputs);
-			pushToArray(allElements, allButtons);
-			pushToArray(allElements, allTextareas);
-
-			// bind mousedown and keydown on body
-			addEventListener(body, 'mousedown', function() {
-				lastDeviceUsed = 'mouse';
-				lastDeviceUsedWhen = new Date().getTime();
-			});
-
-			addEventListener(body, 'keydown', function() {
-				lastDeviceUsed = 'keyboard';
-				lastDeviceUsedWhen = new Date().getTime();
-			});
-
-			// bind focus and blur on everything
-			// unfortunately focusin and focusout aren't fully supported yet
-			for (var i = 0; i < allElements.length; i++) {
-				addEventListener(allElements[i], 'focus', addFocus);
-				addEventListener(allElements[i], 'blur', removeFocus);
-			}
-		</script>
+		<script src="utilities.js"></script>
+		<script src="trackfocus.js"></script>
 
 	</body>
 </html>
