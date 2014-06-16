@@ -11,6 +11,7 @@
 		pushToArray(domElements, document.getElementsByTagName('a'));
 		pushToArray(domElements, document.getElementsByTagName('input'));
 		pushToArray(domElements, document.getElementsByTagName('button'));
+		pushToArray(domElements, document.getElementsByTagName('select'));
 		pushToArray(domElements, document.getElementsByTagName('textarea'));
 	};
 
@@ -18,7 +19,7 @@
 	/** events */
 
 	var bindEvents = function() {
-		bean.on(document.getElementsByTagName('body')[0], {
+		bean.on(document.body, {
 			'mousedown.trackfocus': function() {
 				lastDeviceUsed = 'mouse';
 				lastDeviceUsedWhen = new Date().getTime();
@@ -30,7 +31,7 @@
 		});
 
 
-		for (var i = 0; i < domElements.length; i++) {
+		for (var i = 0, len = domElements.length; i < len; i++) {
 			bean.on(domElements[i], 'focus.trackfocus', addFocus);
 			bean.on(domElements[i], 'blur.trackfocus', removeFocus);
 		}
