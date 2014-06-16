@@ -2,18 +2,8 @@
 
 	/** variables */
 
-	var domElements = [];
 	var lastDeviceUsed = null;
 	var lastDeviceUsedWhen = null;
-
-	// merge into a single array
-	var makeArray = function() {
-		pushToArray(domElements, document.getElementsByTagName('a'));
-		pushToArray(domElements, document.getElementsByTagName('input'));
-		pushToArray(domElements, document.getElementsByTagName('button'));
-		pushToArray(domElements, document.getElementsByTagName('select'));
-		pushToArray(domElements, document.getElementsByTagName('textarea'));
-	};
 
 
 	/** events */
@@ -27,33 +17,23 @@
 			'keydown.trackfocus': function() {
 				lastDeviceUsed = 'keyboard';
 				lastDeviceUsedWhen = new Date().getTime();
-			}
+			},
+			'focusin.trackfocus': addFocus,
+			'focusout.trackfocus': removeFocus
 		});
-
-
-		for (var i = 0, len = domElements.length; i < len; i++) {
-			bean.on(domElements[i], 'focus.trackfocus', addFocus);
-			bean.on(domElements[i], 'blur.trackfocus', removeFocus);
-		}
 	};
 
 
 	/** utilities */
 
-	var addFocus = function() {
+	var addFocus = function(event) {
 		if (lastDeviceUsed === 'mouse' || new Date().getTime() - 50 > lastDeviceUsedWhen) {
-			addClass(this, 'focus--mouse');
+			addClass(event.target, 'focus--mouse');
 		}
 	};
 
-	var removeFocus = function() {
-		removeClass(this, 'focus--mouse');
-	};
-
-	var pushToArray = function(container, collection) {
-		for (var i = 0; i < collection.length; i++) {
-			container.push(collection[i]);
-		}
+	var removeFocus = function(event) {
+		removeClass(event.target, 'focus--mouse');
 	};
 
 	// dom utilities
@@ -81,11 +61,40 @@
 
 	/** init */
 
-	var init = function() {
-		makeArray();
-		bindEvents();
-	};
-
-	init();
+	bindEvents();
 
 })();
+
+
+/*jslint plusplus: true, regexp: true, vars: true, white: true */
+/*global document*/
+
+(function () {
+	'use strict';
+
+	var custom = false;
+
+	function simulateFocusInOut(event) {
+		// CustomEvent is not supported under FF < 6
+		var e = document.createEvent('Event');
+		e.initEvent(event.type === 'focus' ? 'focusin' : 'focusout', true, false);
+		custom = true;
+		event.target.dispatchEvent(e);
+	}
+
+	function off(event) {
+		if (!custom) {
+			// to prevent firing of native 'focusin'/'focusout'
+			event.stopPropagation();
+		}
+		custom = false;
+	}
+
+	if ('\v' !== 'v' && document.addEventListener) {
+		document.addEventListener('focus', simulateFocusInOut, true);
+		document.addEventListener('blur', simulateFocusInOut, true);
+		document.addEventListener('focusin', off, true);
+		document.addEventListener('focusout', off, true);
+	}
+
+}());
