@@ -65,7 +65,7 @@
 
 })();
 
-
+/* via https://gist.github.com/Yaffle/3207619 */
 /*jslint plusplus: true, regexp: true, vars: true, white: true */
 /*global document*/
 
