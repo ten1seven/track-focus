@@ -5,45 +5,45 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Track Focus</title>
+		<title>Track Focus Demo Page</title>
 
-		<style>
-			a,
-			button,
-			input,
-			textarea {
-				outline: none
-			}
-
-			a:hover,
-			a:active {
-				outline: none;
-			}
-
-			a:focus,
-			button:focus,
-			input:focus,
-			textarea:focus {
-				outline: 3px solid blue;
-			}
-
-			.focus--mouse {
-				box-shadow: none !important;
-				outline: none !important;
-			}
-		</style>
+		<link rel="stylesheet" href="stylesheets/index.css">
 
 	</head>
 	<body>
 
-		<p><a href="#">A Link</a></p>
-		<p><button>A Button</button></p>
-		<p><input type="submit" value="A Submit Button"></p>
-		<p><input type="text"></p>
-		<p><textarea></textarea></p>
+		<p>
+			<a href="#">A Link</a>
+		</p>
 
-		<script src="bean.js"></script>
-		<script src="track-focus.js"></script>
+		<p>
+			<button>A Button</button>
+		</p>
+
+		<p>
+			<input type="submit" value="A Submit Input">
+		</p>
+
+		<p>
+			<input type="text" placeholder="A text input">
+		</p>
+
+		<p>
+			<textarea rows="7" placeholder="A textarea"></textarea>
+		</p>
+
+		<p>
+			<label><input type="checkbox"> A checkbox</label>
+		</p>
+
+		<p>
+			<label><input type="radio" name="radio"> A radio button</label><br>
+			<label><input type="radio" name="radio"> A radio button</label>
+
+		</p>
+
+		<script src="javascripts/polyfills.min.js"></script>
+		<script src="javascripts/track-focus.min.js"></script>
 
 	</body>
 </html>
