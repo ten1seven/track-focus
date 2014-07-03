@@ -1,16 +1,46 @@
 body {
-	font-family: sans-serif;
+	//font-family: sans-serif;
+	padding: 50px 0 0;
+}
+
+.container {
+	//margin: 0 auto;
+	//padding: 50px 0 0;
+	//width: 50%;
 }
 
 /* adding basic styling to inputs and textareas removes the default outline in FF */
-input[type="text"],
+/*input[type="text"],
 textarea {
 	border: 1px solid #ccc;
 	font-family: sans-serif;
 	font-size: 16px;
 	padding: 10px;
 	resize: none;
-	width: 35%;
+	width: 100%;
+}*/
+
+a,
+.btn,
+.form-control,
+input[type='checkbox'],
+input[type='radio'] {
+	&:active:focus {
+		box-shadow: none;
+	}
+
+	&:focus {
+		border-color: inherit;
+		box-shadow: none;
+	}
+
+	&.focus--keydown {
+		outline: 3px solid green;
+	}
+
+	&.focus--mousedown {
+		outline: 3px solid blue;
+	}
 }
 
 .focus--keydown {
