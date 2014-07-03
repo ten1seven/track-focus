@@ -5,12 +5,15 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var minifyCSS = require('gulp-minify-css');
 
 
 // styles
 gulp.task('styles', function() {
-	gulp.src('src/stylesheets/*.scss')
+	gulp.src('src/stylesheets/index.scss')
 		.pipe(sass())
+		.pipe(prefix('last 1 version', '> 1%', 'ie 8'))
 		.pipe(gulp.dest('dest/stylesheets/'));
 });
 
@@ -27,6 +30,7 @@ gulp.task('scripts', function() {
 gulp.task('polyfills', function() {
 	gulp.src('src/javascripts/polyfills/*.js')
 		.pipe(concat('polyfills.js'))
+		.pipe(gulp.dest('dest/javascripts/'))
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('dest/javascripts/'));

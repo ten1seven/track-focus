@@ -1,28 +1,80 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   padding: 50px 0 0; }
 
-/* adding basic styling to inputs and textareas removes the default outline in FF */
-/*input[type="text"],
+a {
+  -webkit-box-shadow: 0 0 0 transparent;
+          box-shadow: 0 0 0 transparent;
+  -webkit-transition: all 200ms;
+          transition: all 200ms; }
+
+p {
+  margin: 0 0 20px; }
+
+.container {
+  margin: 0 auto;
+  width: 50%; }
+
+input[type='text'], input[type='password'], input[type='number'], input[type='email'], select, textarea, button, input[type='submit'] {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 0 transparent;
+          box-shadow: 0 0 0 transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 6px 12px;
+  -webkit-transition: all 200ms;
+          transition: all 200ms; }
+
+input[type='text'], input[type='password'], input[type='number'], input[type='email'], select, textarea {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #555;
+  display: block;
+  font-size: 16px;
+  height: 40px;
+  width: 100%; }
+
 textarea {
-	border: 1px solid #ccc;
-	font-family: sans-serif;
-	font-size: 16px;
-	padding: 10px;
-	resize: none;
-	width: 100%;
-}*/
-a:active:focus, .btn:active:focus, .form-control:active:focus, input[type='checkbox']:active:focus, input[type='radio']:active:focus {
-  box-shadow: none; }
-a:focus, .btn:focus, .form-control:focus, input[type='checkbox']:focus, input[type='radio']:focus {
-  border-color: inherit;
-  box-shadow: none; }
-a.focus--keydown, .btn.focus--keydown, .form-control.focus--keydown, input[type='checkbox'].focus--keydown, input[type='radio'].focus--keydown {
-  outline: 3px solid green; }
-a.focus--mousedown, .btn.focus--mousedown, .form-control.focus--mousedown, input[type='checkbox'].focus--mousedown, input[type='radio'].focus--mousedown {
-  outline: 3px solid blue; }
+  height: auto;
+  resize: none; }
 
-.focus--keydown {
-  outline: 3px solid green; }
+input[type='checkbox'], input[type='radio'] {
+  margin: 0 5px 0 0; }
 
-.focus--mousedown {
-  outline: 3px solid blue; }
+button, input[type='submit'] {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle; }
+
+.button--default {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #333; }
+
+.button--primary {
+  background-color: #428bca;
+  border-color: #357ebd;
+  color: #fff; }
+
+.focus--keydown, a.focus--keydown, button.focus--keydown, input.focus--keydown, select.focus--keydown, textarea.focus--keydown {
+  border-color: #ffaa55;
+  -webkit-box-shadow: 0 0 6px 2px #ffaa55;
+          box-shadow: 0 0 6px 2px #ffaa55;
+  outline: none; }
+
+.focus--mousedown, a.focus--mousedown, button.focus--mousedown, input.focus--mousedown, select.focus--mousedown, textarea.focus--mousedown {
+  border-color: #5aa8bd;
+  -webkit-box-shadow: 0 0 6px 2px #5aa8bd;
+          box-shadow: 0 0 6px 2px #5aa8bd;
+  outline: none; }
+

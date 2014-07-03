@@ -1,0 +1,61 @@
+// inputs
+%input-defaults {
+	border: 1px solid transparent;
+	border-radius: 3px;
+	box-shadow: 0 0 0 transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	margin: 0;
+	padding: 6px 12px;
+	transition: all 200ms;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='email'],
+select,
+textarea {
+	@extend %input-defaults;
+	background-color: #fff;
+	border-color: #ccc;
+	color: #555;
+	display: block;
+	font-size: 16px;
+	height: 40px;
+	width: 100%;
+}
+
+textarea {
+	height: auto;
+	resize: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	margin: 0 5px 0 0;
+}
+
+// buttons
+button,
+input[type='submit'] {
+	@extend %input-defaults;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.button--default {
+	background-color: #fff;
+	border-color: #ccc;
+	color: #333;
+}
+
+.button--primary {
+	background-color: #428bca;
+	border-color: #357ebd;
+	color: #fff;
+}

@@ -5,6 +5,8 @@
 		"gulp-concat": "",
 		"gulp-clean": "",
 		"gulp-uglify": "",
-		"gulp-sass": ""
+		"gulp-sass": "",
+		"gulp-autoprefixer": "",
+		"gulp-minify-css": ""
 	}
 }
