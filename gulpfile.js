@@ -7,8 +7,6 @@ var clean = require('gulp-clean');
 var sass = require('gulp-sass');
 var header = require('gulp-header');
 
-// load package.json
-var pkg = require('./package.json');
 
 // banner text
 var banner = '/*! track-focus v 0.1 | Author: Jeremy Fields [jeremy.fields@vget.com], 2014 | License: MIT */\n';
@@ -25,7 +23,7 @@ gulp.task('styles', function() {
 // scripts
 gulp.task('scripts', function() {
 	gulp.src('src/javascripts/track-focus.js')
-		.pipe(header(banner, { pkg: pkg } ))
+		.pipe(header(banner))
 		.pipe(gulp.dest('dest/javascripts/'))
 		.pipe(uglify({ preserveComments: 'some' }))
 		.pipe(rename({ suffix: '.min' }))
