@@ -5,7 +5,6 @@
 		"gulp-concat": "",
 		"gulp-clean": "",
 		"gulp-uglify": "",
-		"gulp-sass": "",
-		"gulp-header": ""
+		"gulp-sass": ""
 	}
 }
