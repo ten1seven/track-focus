@@ -56,19 +56,6 @@
 
 		<script src="javascripts/polyfills.js"></script>
 		<script src="javascripts/track-focus.js"></script>
-		<script>
-			var blockActions = function() { return false; };
-
-			var forms = document.getElementsByTagName('form');
-			for (var i = 0, len = forms.length; i < len; i++) {
-				forms[i].onsubmit = blockActions;
-			}
-
-			var links = document.getElementsByTagName('a');
-			for (var i = 0, len = links.length; i < len; i++) {
-				links[i].onclick = blockActions;
-			}
-		</script>
 
 	</body>
 </html>
