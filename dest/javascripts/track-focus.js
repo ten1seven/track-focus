@@ -6,7 +6,7 @@
 	var lastDeviceUsed;
 
 	var preFocus = function(event) {
-		lastDeviceUsed = event.type;
+		lastDeviceUsed = (event.type === 'mousedown') ? 'mouse' : 'keyboard';
 	};
 
 	var addFocus = function(event) {
@@ -14,8 +14,8 @@
 	};
 
 	var removeFocus = function(event) {
-		event.target.classList.remove('focus--keydown');
-		event.target.classList.remove('focus--mousedown');
+		event.target.classList.remove('focus--keyboard');
+		event.target.classList.remove('focus--mouse');
 	};
 
 	var bindEvents = function() {

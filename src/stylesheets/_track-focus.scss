@@ -1,10 +1,10 @@
-.focus--keydown {
+.focus--keyboard {
 	border-color: #ffaa55;
 	box-shadow: 0 0 6px 2px #ffaa55;
 	outline: none;
 }
 
-.focus--mousedown {
+.focus--mouse {
 	border-color: #5aa8bd;
 	box-shadow: 0 0 6px 2px #5aa8bd;
 	outline: none;
@@ -15,11 +15,11 @@ button,
 input,
 select,
 textarea {
-	&.focus--keydown {
-		@extend .focus--keydown;
+	&.focus--keyboard {
+		@extend .focus--keyboard;
 	}
 
-	&.focus--mousedown {
-		@extend .focus--mousedown;
+	&.focus--mouse {
+		@extend .focus--mouse;
 	}
 }

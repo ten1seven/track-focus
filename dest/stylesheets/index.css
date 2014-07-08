@@ -66,13 +66,13 @@ button, input[type='submit'] {
   border-color: #357ebd;
   color: #fff; }
 
-.focus--keydown, a.focus--keydown, button.focus--keydown, input.focus--keydown, select.focus--keydown, textarea.focus--keydown {
+.focus--keyboard, a.focus--keyboard, button.focus--keyboard, input.focus--keyboard, select.focus--keyboard, textarea.focus--keyboard {
   border-color: #ffaa55;
   -webkit-box-shadow: 0 0 6px 2px #ffaa55;
           box-shadow: 0 0 6px 2px #ffaa55;
   outline: none; }
 
-.focus--mousedown, a.focus--mousedown, button.focus--mousedown, input.focus--mousedown, select.focus--mousedown, textarea.focus--mousedown {
+.focus--mouse, a.focus--mouse, button.focus--mouse, input.focus--mouse, select.focus--mouse, textarea.focus--mouse {
   border-color: #5aa8bd;
   -webkit-box-shadow: 0 0 6px 2px #5aa8bd;
           box-shadow: 0 0 6px 2px #5aa8bd;
