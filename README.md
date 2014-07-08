@@ -20,7 +20,7 @@ Check out the <a href="http://ten1seven.github.io/trackFocus/">demo page</a>.
 
 Works as-is in all modern browsers. For older browsers, like IE8, grab these polyfills:
 
-- "classList":https://github.com/remy/polyfills/blob/master/classList.js by remy
-- "EventListener":https://github.com/jonathantneal/EventListener by jonathantneal
-- "focusin":https://gist.github.com/Yaffle/3207619 by Yaffle
-- Or use the "bundled, minified version":https://github.com/ten1seven/trackFocus/blob/master/dest/javascripts/polyfills.min.js.
+- <a href="https://github.com/remy/polyfills/blob/master/classList.js">classList</a> by remy
+- <a href="https://github.com/jonathantneal/EventListener">EventListener</a> by jonathantneal
+- <a href="https://gist.github.com/Yaffle/3207619">focusin</a> by Yaffle
+- Or use the <a href="https://github.com/ten1seven/trackFocus/blob/master/dest/javascripts/polyfills.min.js">bundled, minified version</a>.
