@@ -15,11 +15,11 @@ button,
 input,
 select,
 textarea {
-	&.focus--keyboard {
+	&:focus {
 		@extend .focus--keyboard;
 	}
 
-	&.focus--mouse {
+	&:focus.focus--mouse {
 		@extend .focus--mouse;
 	}
 }

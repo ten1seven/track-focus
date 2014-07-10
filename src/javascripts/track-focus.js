@@ -3,18 +3,18 @@
 
 (function(body) {
 
-	var lastDeviceUsed;
+	var usingMouse;
 
 	var preFocus = function(event) {
-		lastDeviceUsed = (event.type === 'mousedown') ? 'mouse' : 'keyboard';
+		usingMouse = (event.type === 'mousedown');
 	};
 
 	var addFocus = function(event) {
-		event.target.classList.add('focus--' + lastDeviceUsed);
+		if (usingMouse)
+			event.target.classList.add('focus--mouse');
 	};
 
 	var removeFocus = function(event) {
-		event.target.classList.remove('focus--keyboard');
 		event.target.classList.remove('focus--mouse');
 	};
 
