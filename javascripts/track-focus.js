@@ -1,7 +1,7 @@
-/*! track-focus v 0.1 | Author: Jeremy Fields [jeremy.fields@vget.com], 2014 | License: MIT */
+/*! track-focus v 0.2 | Author: Jeremy Fields [jeremy.fields@vget.com], 2014 | License: MIT */
 // inspired by: http://irama.org/pkg/keyboard-focus-0.3/jquery.keyboard-focus.js
 
-(function() {
+(function(body) {
 
 	var lastDeviceUsed;
 
@@ -19,12 +19,12 @@
 	};
 
 	var bindEvents = function() {
-		document.body.addEventListener('keydown', preFocus);
-		document.body.addEventListener('mousedown', preFocus);
-		document.body.addEventListener('focusin', addFocus);
-		document.body.addEventListener('focusout', removeFocus);
+		body.addEventListener('keydown', preFocus);
+		body.addEventListener('mousedown', preFocus);
+		body.addEventListener('focusin', addFocus);
+		body.addEventListener('focusout', removeFocus);
 	};
 
 	bindEvents();
 
-})();
+})(document.body);
