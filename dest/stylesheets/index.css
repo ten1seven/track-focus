@@ -1,6 +1,5 @@
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8,8 +7,7 @@ body {
   padding: 50px 0 0; }
 
 a {
-  -webkit-box-shadow: 0 0 0 transparent;
-          box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
   -webkit-transition: all 200ms;
           transition: all 200ms; }
 
@@ -23,8 +21,7 @@ p {
 input[type='text'], input[type='password'], input[type='number'], input[type='email'], select, textarea, button, input[type='submit'] {
   border: 1px solid transparent;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 0 transparent;
-          box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4;
   margin: 0;
@@ -68,13 +65,11 @@ button, input[type='submit'] {
 
 .focus--keyboard, a:focus, button:focus, input:focus, select:focus, textarea:focus {
   border-color: #ffaa55;
-  -webkit-box-shadow: 0 0 6px 2px #ffaa55;
-          box-shadow: 0 0 6px 2px #ffaa55;
+  box-shadow: 0 0 6px 2px #ffaa55;
   outline: none; }
 
-.focus--mouse, a:focus.focus--mouse, button:focus.focus--mouse, input:focus.focus--mouse, select:focus.focus--mouse, textarea:focus.focus--mouse {
+.focus--mouse, a.focus--mouse:focus, button.focus--mouse:focus, input.focus--mouse:focus, select.focus--mouse:focus, textarea.focus--mouse:focus {
   border-color: #5aa8bd;
-  -webkit-box-shadow: 0 0 6px 2px #5aa8bd;
-          box-shadow: 0 0 6px 2px #5aa8bd;
+  box-shadow: 0 0 6px 2px #5aa8bd;
   outline: none; }
 

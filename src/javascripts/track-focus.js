@@ -1,4 +1,4 @@
-/*! track-focus v 0.2 | Author: Jeremy Fields [jeremy.fields@vget.com], 2014 | License: MIT */
+/*! track-focus v 1.0.0 | Author: Jeremy Fields [jeremy.fields@vget.com], 2015 | License: MIT */
 // inspired by: http://irama.org/pkg/keyboard-focus-0.3/jquery.keyboard-focus.js
 
 (function(body) {
