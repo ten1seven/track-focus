@@ -1,0 +1,24 @@
+{
+  "name": "trackFocus",
+  "version": "0.2.0",
+  "homepage": "https://github.com/ten1seven/trackFocus",
+  "authors": [
+    "Jeremy Fields <jeremy.fields@viget.com>"
+  ],
+  "description": "Tracks the focus event for better accessibility styling.",
+  "main": "dest/javascripts/track-focus.min.js",
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "focus",
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
