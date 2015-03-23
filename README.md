@@ -1,6 +1,6 @@
-# Track Focus
-
 _I created a newer version of trackFocus that includes more generic event detection (including touch and pointer), only adds a single attribute to the body instead of littering the DOM with classes and exposes a small API for scripting. Check out [What Input?](https://github.com/ten1seven/what-input)._
+
+# Track Focus
 
 trackFocus adds a class to elements when they receive focus, allowing specific styling for keyboard versus mouse interaction.
 
