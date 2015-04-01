@@ -4,7 +4,7 @@ _I created a newer version of trackFocus that includes more generic event detect
 
 trackFocus adds a class to elements when they receive focus, allowing specific styling for keyboard versus mouse interaction.
 
-Check out the <a href="http://ten1seven.github.io/trackFocus/">demo page</a>.
+Check out the <a href="http://ten1seven.github.io/track-focus/">demo page</a>.
 
 ## How it works
 
