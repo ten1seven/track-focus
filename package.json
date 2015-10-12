@@ -1,4 +1,24 @@
 {
+	"name": "track-focus",
+	"version": "1.0.0",
+	"description": "Tracks the focus event for better accessibility styling.",
+	"main": "dest/javascripts/track-focus.min.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ten1seven/track-focus.git"
+	},
+	"keywords": [
+		"accessibility",
+		"a11y",
+		"input",
+		"javascript"
+	],
+	"author": "Jeremy Fields <jeremy.fields@viget.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ten1seven/track-focus/issues"
+	},
+	"homepage": "https://github.com/ten1seven/track-focus",
 	"devDependencies": {
 		"gulp": "",
 		"gulp-rename": "",
